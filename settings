@@ -1,3 +1,12 @@
-YourNetworkName=garyclayburg.com
-ForwardMasterFile=garyclayburg.com
-ReverseMasterFile=1.168.192.in-addr.arpa
+# Multi-zone: eth0 (VLAN 1) = sonair.local / 10.14.15.x, eth1 (VLAN 30) = sonair.lab / 10.20.30.x
+NUM_ZONES=2
+
+ZONE_1_NAME=sonair.local
+ZONE_1_FORWARD=sonair.local
+ZONE_1_REVERSE=10.14.15.in-addr.arpa
+ZONE_1_SUBNET=10.14.15
+
+ZONE_2_NAME=sonair.lab
+ZONE_2_FORWARD=sonair.lab
+ZONE_2_REVERSE=10.20.30.in-addr.arpa
+ZONE_2_SUBNET=10.20.30

@@ -96,6 +96,8 @@ You will need to:
 
     The settings file needs to be modified to match your network.  See the comments in the `diskstation_dns_modify.sh` script for details.
 
+    **Multi-zone (two or more DHCP/DNS zones):** If you have multiple network interfaces (e.g. eth0 on VLAN 1 and eth1 on VLAN 30), each with its own subnet and DNS zone, set `NUM_ZONES` and for each zone N set `ZONE_N_NAME`, `ZONE_N_FORWARD`, `ZONE_N_REVERSE`, and `ZONE_N_SUBNET` (the first three octets of the subnet, e.g. `10.14.15` or `10.20.30`). DHCP-derived records are then filtered by subnet so each zone only gets A/PTR records for IPs in its subnet.
+
 3. Install the start script into `/usr/local/etc/rc.d/ directory`.  It also should be owed by root and executable.
 
 ```
